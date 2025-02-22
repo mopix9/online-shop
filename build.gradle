@@ -1,0 +1,25 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+buildscript {
+    ext {
+        compose_version = '1.6.7'
+        room_version = '2.6.1'  // آخرین نسخه Room
+        kotlin_version = '1.9.10'  // ورژن به‌روز Kotlin
+    }
+    repositories {
+        maven {
+            url 'https://dl.google.com/dl/android/maven2'
+        }
+        mavenCentral()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.4.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:2.49"
+    }
+}
